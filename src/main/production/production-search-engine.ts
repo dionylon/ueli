@@ -67,6 +67,7 @@ import { FirefoxBookmarkRepository } from "../plugins/browser-bookmarks-plugin/f
 import { ChromiumBookmarkRepository } from "../plugins/browser-bookmarks-plugin/chromium-bookmark-repository";
 import { WeatherPlugin } from "../plugins/weather-plugin/weather-plugin";
 import { LoremIpsumPlugin } from "../plugins/lorem-ipsum-plugin/lorem-ipsum-plugin";
+import { ChatBotPlugin } from "../plugins/chat-plugin/chat-plugin";
 
 export function getProductionSearchEngine(
     operatingSystem: OperatingSystem,
@@ -206,6 +207,7 @@ export function getProductionSearchEngine(
     );
 
     const executionPlugins: ExecutionPlugin[] = [
+        new ChatBotPlugin(config, translationSet, electronClipboardCopier),
         webSearchPlugin,
         new FileBrowserExecutionPlugin(
             config.fileBrowserOptions,

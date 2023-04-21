@@ -62,6 +62,8 @@ export const settingMenuItemComponent = Vue.extend({
                     return translations.websearch;
                 case PluginSettings.Workflow:
                     return translations.workflows;
+                case PluginSettings.Chat:
+                    return "Chat";
                 case SettingOsSpecific.ControlPanel.replace(`${platform()}:`, ""):
                     return translations.controlPanel;
                 case SettingOsSpecific.Everything.replace(`${platform()}:`, ""):
@@ -125,6 +127,8 @@ export const settingMenuItemComponent = Vue.extend({
                     return config.weatherOptions.isEnabled;
                 case PluginSettings.LoremIpsum:
                     return config.loremIpsumOptions.isEnabled;
+                case PluginSettings.Chat:
+                    return config.chatOptions.isEnabled;
                 case PluginSettings.WebSearch:
                     return config.websearchOptions.isEnabled;
                 case PluginSettings.Workflow:
